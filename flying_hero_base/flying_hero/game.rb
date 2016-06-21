@@ -32,6 +32,7 @@ class Game < Gosu::Window
       end
 
     end
+
     def update
 
       @background.scroll!
@@ -44,9 +45,9 @@ class Game < Gosu::Window
 
       @hero.move_down!(height)
 
-
-
       end
+
+      @candy.move!
 
     end
 end
