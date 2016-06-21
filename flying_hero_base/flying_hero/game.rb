@@ -1,4 +1,6 @@
 require 'gosu'
+require_relative 'background'
+require_relative 'hero'
 
 class Game < Gosu::Window
 
@@ -8,9 +10,15 @@ class Game < Gosu::Window
 
     self.caption = 'Flying Hero!'
 
+    @background = Background.new
+    @hero = Hero.new
+
   end
 
     def draw
+
+      @background.draw
+      @hero.draw
 
     end
 
@@ -20,6 +28,23 @@ class Game < Gosu::Window
 
         close
       end
-      
+
+    end
+    def update
+
+      @background.scroll!
+
+      if button_down?(Gosu::KbUp)
+
+        @hero.move_up!
+
+      elsif button_down?(Gosu::KbDown)
+
+      @hero.move_down!(height)
+
+
+
+      end
+
     end
 end
