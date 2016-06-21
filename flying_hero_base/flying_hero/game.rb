@@ -1,6 +1,7 @@
 require 'gosu'
 require_relative 'background'
 require_relative 'hero'
+require_relative 'candy'
 
 class Game < Gosu::Window
 
@@ -12,6 +13,7 @@ class Game < Gosu::Window
 
     @background = Background.new
     @hero = Hero.new
+    @candy = Candy.new(self)
 
   end
 
@@ -19,7 +21,7 @@ class Game < Gosu::Window
 
       @background.draw
       @hero.draw
-
+      @candy.draw
     end
 
     def button_down(id)
