@@ -46,11 +46,16 @@ class Game < Gosu::Window
     def update
       @background.scroll!
       @candy.move!
+      @asteroid.move!
 
-      if @candy.x < 0
-        @candy.reset!(self)
+      if @asteroid.x < 0
+        set_asteroid
 
       end
+      if @candy.x < 0
+        @candy.reset!(self)
+      end
+
 
       if button_down?(Gosu::KbUp)
 

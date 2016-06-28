@@ -2,6 +2,7 @@ require 'gosu'
 require_relative 'flying_item'
 
 class Asteroid < FlyingItem
+  attr_accessor :x
   def initialize(window)
     super
     @scale_x = 1
@@ -16,7 +17,7 @@ class Asteroid < FlyingItem
 
   def draw
     @image.draw(@x, @y, 1, @scale_x, @scale_y)
-    
+
   end
 
 end
