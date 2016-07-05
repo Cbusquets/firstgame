@@ -1,14 +1,15 @@
 require 'gosu'
+require_relative 'game'
 
 class Score
   def initialize
+    @font = Gosu::Font.new(72, name: 'Arial')
     @score = 0
 
   end
 
   def draw
-    @score = Gosu::Image.from_text(window, 'Score: ' + @score, font_name, line_height)
-
+    @font.draw(@score,10,10,2)
 
   end
 
