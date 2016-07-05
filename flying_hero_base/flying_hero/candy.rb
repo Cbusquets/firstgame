@@ -14,4 +14,9 @@ class Candy < FlyingItem
 
   end
 
+  def points
+    10
+
+  end
+
 end

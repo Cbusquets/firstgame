@@ -1,6 +1,7 @@
 require 'gosu'
 
 class FlyingItem
+  attr_accessor :x, :y, :width, :height
 
   def initialize(window)
 

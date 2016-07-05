@@ -13,4 +13,9 @@ class Score
 
   end
 
+  def update_score!(score)
+    @score += score
+
+  end
+
 end

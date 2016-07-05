@@ -16,7 +16,7 @@ class Game < Gosu::Window
     @hero = Hero.new
     @candy = Candy.new(self)
     set_asteroid
-    @font = Score.new
+    @scoreboard = Score.new
 
   end
 
@@ -33,7 +33,7 @@ class Game < Gosu::Window
       @hero.draw
       @candy.draw
       @asteroid.draw
-      @font.draw
+      @scoreboard.draw
 
     end
 
@@ -59,7 +59,6 @@ class Game < Gosu::Window
         @candy.reset!(self)
       end
 
-
       if button_down?(Gosu::KbUp)
 
         @hero.move_up!
@@ -67,8 +66,11 @@ class Game < Gosu::Window
       elsif button_down?(Gosu::KbDown)
 
       @hero.move_down!(height)
+      end
 
-
+      if @hero.bumped_into?(@candy)
+        @candy.reset!(self)
+        @scoreboard.update_score!(@candy.points)
       end
 
     end
