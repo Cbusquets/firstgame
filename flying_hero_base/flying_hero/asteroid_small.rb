@@ -4,7 +4,10 @@ require_relative 'asteroid'
 class AsteroidSmall < Asteroid
   def move!
     @x -= 20
+  end
 
+  def points
+    -5
   end
 
 end

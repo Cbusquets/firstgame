@@ -21,4 +21,8 @@ class AsteroidBig < Asteroid
     2
   end
 
+  def points
+    -15
+  end
+
 end
